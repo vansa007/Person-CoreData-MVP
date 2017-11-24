@@ -8,22 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		F7A8B3F01FC8688B00492773 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A8B3EF1FC8688B00492773 /* AppDelegate.swift */; };
-		F7A8B3F21FC8688B00492773 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A8B3F11FC8688B00492773 /* ViewController.swift */; };
+		F7A8B3F21FC8688B00492773 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A8B3F11FC8688B00492773 /* PersonViewController.swift */; };
 		F7A8B3F51FC8688B00492773 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7A8B3F31FC8688B00492773 /* Main.storyboard */; };
 		F7A8B3F81FC8688B00492773 /* Person.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F7A8B3F61FC8688B00492773 /* Person.xcdatamodeld */; };
 		F7A8B3FA1FC8688B00492773 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7A8B3F91FC8688B00492773 /* Assets.xcassets */; };
 		F7A8B3FD1FC8688B00492773 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7A8B3FB1FC8688B00492773 /* LaunchScreen.storyboard */; };
+		F7A8B4071FC869E500492773 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A8B4061FC869E500492773 /* Person.swift */; };
+		F7A8B40A1FC8700E00492773 /* PersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A8B4091FC8700E00492773 /* PersonView.swift */; };
+		F7A8B40C1FC875A000492773 /* PersonCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A8B40B1FC875A000492773 /* PersonCustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F7A8B3EC1FC8688B00492773 /* Person.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Person.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7A8B3EF1FC8688B00492773 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F7A8B3F11FC8688B00492773 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F7A8B3F11FC8688B00492773 /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		F7A8B3F41FC8688B00492773 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F7A8B3F71FC8688B00492773 /* Person.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Person.xcdatamodel; sourceTree = "<group>"; };
 		F7A8B3F91FC8688B00492773 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7A8B3FC1FC8688B00492773 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7A8B3FE1FC8688B00492773 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7A8B4061FC869E500492773 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		F7A8B4091FC8700E00492773 /* PersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonView.swift; sourceTree = "<group>"; };
+		F7A8B40B1FC875A000492773 /* PersonCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +62,10 @@
 		F7A8B3EE1FC8688B00492773 /* Person */ = {
 			isa = PBXGroup;
 			children = (
+				F7A8B4081FC8700000492773 /* view */,
+				F7A8B4051FC868FA00492773 /* presenter */,
+				F7A8B4041FC868F200492773 /* model */,
 				F7A8B3EF1FC8688B00492773 /* AppDelegate.swift */,
-				F7A8B3F11FC8688B00492773 /* ViewController.swift */,
 				F7A8B3F31FC8688B00492773 /* Main.storyboard */,
 				F7A8B3F91FC8688B00492773 /* Assets.xcassets */,
 				F7A8B3FB1FC8688B00492773 /* LaunchScreen.storyboard */,
@@ -65,6 +73,31 @@
 				F7A8B3F61FC8688B00492773 /* Person.xcdatamodeld */,
 			);
 			path = Person;
+			sourceTree = "<group>";
+		};
+		F7A8B4041FC868F200492773 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				F7A8B4061FC869E500492773 /* Person.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		F7A8B4051FC868FA00492773 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F7A8B4091FC8700E00492773 /* PersonView.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		F7A8B4081FC8700000492773 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				F7A8B3F11FC8688B00492773 /* PersonViewController.swift */,
+				F7A8B40B1FC875A000492773 /* PersonCustomCell.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +172,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7A8B3F21FC8688B00492773 /* ViewController.swift in Sources */,
+				F7A8B40A1FC8700E00492773 /* PersonView.swift in Sources */,
+				F7A8B40C1FC875A000492773 /* PersonCustomCell.swift in Sources */,
+				F7A8B3F21FC8688B00492773 /* PersonViewController.swift in Sources */,
 				F7A8B3F81FC8688B00492773 /* Person.xcdatamodeld in Sources */,
+				F7A8B4071FC869E500492773 /* Person.swift in Sources */,
 				F7A8B3F01FC8688B00492773 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
