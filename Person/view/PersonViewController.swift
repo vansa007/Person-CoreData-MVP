@@ -11,19 +11,19 @@ import UIKit
 class PersonViewController: UIViewController {
     
     @IBOutlet weak var myTableView: UITableView!
-    var presenter: PersonPresenter?
+    var presenter: PersonPresenter = PersonPresenter()
     var people = [PersonModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter = PersonPresenter(view: self)
-        presenter?.doRead()
+        presenter.delegate = self
+        presenter.doRead()
     }
     
     //MARK: add new person
     @IBAction func addNewPersonAction(_ sender: UIBarButtonItem) {
-        let person = Person(id: "2", name: "Sophatana", age: "24")
-        presenter?.doSave(person: person)
+        let person = Person(id: "4", name: "Bong Soy", age: "67")
+        presenter.doSave(person: person)
     }
     
 }
@@ -47,7 +47,7 @@ extension PersonViewController: PersonView {
     //override: save done
     func didSave(error: Error?) {
         if error == nil {
-            presenter?.doRead()
+            presenter.doRead()
         }
     }
     

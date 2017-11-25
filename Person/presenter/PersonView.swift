@@ -14,19 +14,19 @@ protocol PersonView: class {
 }
 
 protocol PersonViewPresenter {
-    init(view: PersonView?)
+    //init(view: PersonView?)
     func doSave(person: Person)
     func doRead()
 }
 
 struct PersonPresenter: PersonViewPresenter {
-    weak var view: PersonView?
+    weak var delegate: PersonView?
     var people = [PersonModel]()
-    
-    init(view: PersonView?){
-        self.view = view
-    }
-    
+//    init(view: PersonView?){
+//        self.view = view
+//    }
+
+
     func doSave(person: Person) {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         guard let context = appDelegate?.persistentContainer.viewContext else { return }
@@ -36,10 +36,10 @@ struct PersonPresenter: PersonViewPresenter {
         personModel.age = person.age
         do {
             try context.save()
-            view?.didSave(error: nil)
+            delegate?.didSave(error: nil)
         }catch {
             debugPrint("Can not insert.")
-            view?.didSave(error: error)
+            delegate?.didSave(error: error)
         }
     }
     
@@ -49,10 +49,10 @@ struct PersonPresenter: PersonViewPresenter {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "PersonModel")
         do {
             let people = try context.fetch(fetchRequest) as? [PersonModel] ?? []
-            view?.didRead(people: people, error: nil)
+            delegate?.didRead(people: people, error: nil)
         }catch {
             debugPrint("Can not fetch data.")
-            view?.didRead(people: [], error: error)
+            delegate?.didRead(people: [], error: error)
         }
     }
 }
